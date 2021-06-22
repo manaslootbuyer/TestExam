@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{A293BF12-5870-4F94-A928-F5A8D529AD28}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExamEdrian/Services/SearchService.cs">
+    <Files>
+      <File FileName="ExamEdrian/Services/SearchService.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ExamEdrian" expanded="True">
+            <Node name="ExamEdrian" expanded="True">
+              <Node name="Helpers" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="Interface" expanded="True" />
+                <Node name="SearchService.cs" selected="True" />
+              </Node>
+              <Node name="ViewModel" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="ReservePage.xaml" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ExamEdrian.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C2C9DC1D-E255-43C5-918B-389FB472E95D" />
+  <MonoDevelop.Ide.ItemProperties.ExamEdrian.Android FirstBuild="True" PreferredExecutionTarget="Android.Nexus_5X_API_29" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/edrianluna/Desktop/Exam/ExamEdrian/ExamEdrian/ViewModel/SearchViewModel.cs" relfile="ExamEdrian/ViewModel/SearchViewModel.cs" line="95" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

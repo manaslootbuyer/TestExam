@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:ExamEdrian.Resources;assembly=ExamEdrian"
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    iOS:Page.UseSafeArea="true"
+    Title="{x:Static res:Strings.SearchPage}"
+    x:Class="ExamEdrian.Views.SearchPage">
+            <Grid
+                RowSpacing="10"
+                RowDefinitions="Auto, Auto, Auto, *"
+                Padding="20">
+                <StackLayout
+                    Grid.Row="0"
+                    Padding="0,20,0,0">
+
+                    <Label
+                        Text="{x:Static res:Strings.ParkCode}"
+                        FontSize="Small"
+                        FontAttributes="Bold"
+                        TextColor="Blue"/>
+
+                    <Entry
+                        FontSize="Medium"
+                        Placeholder="{x:Static res:Strings.ParkCodePlaceholder}"
+                        PlaceholderColor="Gray"
+                        HeightRequest="40"
+                        Text="{Binding ParkCode}"
+                        TextColor="Black" />
+                    <BoxView
+                        BackgroundColor="Gray"
+                        HeightRequest="1"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="1"
+                    Margin="0,12,0,2">
+                     <Label
+                        Text="{x:Static res:Strings.ArrivalDate}"
+                        FontSize="Small"
+                        FontAttributes="Bold"
+                        TextColor="Blue"/>
+
+                     <DatePicker
+                        HeightRequest="40"
+                        MinimumDate="{Binding MinDate}"
+                        Date="{Binding SelectedDate}" />
+                    <BoxView
+                        BackgroundColor="Gray"
+                        HeightRequest="1.2"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <Button
+                    Grid.Row="2"
+                    Text="{x:Static res:Strings.Search}"
+                    HeightRequest="40"
+                    Command="{Binding SearchCommand}"
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="White"
+                    BackgroundColor="Green"/>
+
+                <ListView
+                    Grid.Row="3"
+		            ItemsSource="{Binding CustomersList}"
+		            RowHeight="80"
+		            SelectedItem="{Binding SelectedCustomer}">
+		            <ListView.ItemTemplate>
+			            <DataTemplate>
+				            <ViewCell>
+                              <Grid RowDefinitions="Auto, Auto, Auto">
+                                    <Grid
+                                        ColumnDefinitions="Auto, Auto">
+                                         <Label
+							                Text="{x:Static res:Strings.GuestName}"
+							                HorizontalOptions="Start"
+							                VerticalOptions="Center"
+							                TextColor="Black" />
+						                 <Label
+                                            Grid.Column="1"
+							                Text="{Binding GuestName}"
+							                HorizontalOptions="Start"
+							                VerticalOptions="Center"
+							                TextColor="Black" />
+					                 </Grid>
+
+                                     <Grid
+                                        Grid.Row="1"
+                                        ColumnDefinitions="Auto, Auto">
+                                         <Label
+							                Text="{x:Static res:Strings.Arrived}"
+							                HorizontalOptions="Start"
+							                VerticalOptions="Center"
+							                TextColor="Black" />
+						                 <Label
+                                            Grid.Column="1"
+							                Text="{Binding Arrived}"
+							                HorizontalOptions="Start"
+							                VerticalOptions="Center"
+							                TextColor="Black" />
+					                 </Grid>
+
+                                     <Grid
+                                        Grid.Row="2"
+                                        ColumnDefinitions="Auto, Auto">
+                                         <Label
+							                Text="{x:Static res:Strings.Departure}"
+							                HorizontalOptions="Start"
+							                VerticalOptions="Center"
+							                TextColor="Black" />
+						                 <Label
+                                            Grid.Column="1"
+							                Text="{Binding Depart}"
+							                HorizontalOptions="Start"
+							                VerticalOptions="Center"
+							                TextColor="Black" />
+					                 </Grid>
+                              </Grid>
+				            </ViewCell>
+			            </DataTemplate>
+		            </ListView.ItemTemplate>
+	            </ListView>
+            </Grid>
+</ContentPage>
