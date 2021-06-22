@@ -17,13 +17,13 @@ namespace ExamEdrian.Services
 
         public async Task<List<CustomerDTO>> GetCustomers(string parkCode, string arriving, CancellationToken cts = default)
         {
-            return await _dataService.GetResponseAsync<List<CustomerDTO>>($"api/NPS/Customers&parkCode={parkCode}&arriving={arriving}", cts, WebRequestMethod.GET);
+            return await _dataService.GetResponseAsync<List<CustomerDTO>>($"api/NPS/Customers?parkCode={parkCode}&arriving={arriving}", cts, WebRequestMethod.GET);
         }
 
         public async Task<bool> SaveEmailAsync(ReserveCommand command, CancellationToken cts = default)
         {
             var result = await _dataService.GetResponseAsync<string>("api/NPS/Response", cts, WebRequestMethod.POST, command);
-            return false;
+            return true;
         }
     }
 }

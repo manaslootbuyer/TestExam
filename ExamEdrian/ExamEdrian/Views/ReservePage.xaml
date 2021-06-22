@@ -27,10 +27,6 @@
                         Keyboard="Email"
                         Text="{Binding Email}"
                         TextColor="Black" />
-                    <BoxView
-                        BackgroundColor="Gray"
-                        HeightRequest="1"
-                        HorizontalOptions="FillAndExpand" />
                 </StackLayout>
 
                 <Button

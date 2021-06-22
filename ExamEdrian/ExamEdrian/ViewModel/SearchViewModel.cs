@@ -38,21 +38,12 @@ namespace ExamEdrian.ViewModel
             }
         }
 
-
         string _parkCode;
         public string ParkCode
         {
             get => _parkCode;
             set => SetProperty(ref _parkCode, value);
         }
-
-        DateTime _minDate;
-        public DateTime MinDate
-        {
-            get => _minDate;
-            set => SetProperty(ref _minDate, value);
-        }
-
 
         DateTime _selectedDate;
         public DateTime SelectedDate
@@ -76,17 +67,8 @@ namespace ExamEdrian.ViewModel
             _searchService = searchService;
             SearchCommand = new RelayCommand(async () => await Search());
             GoToReserveCommand = new RelayCommand<string>(async resId => await GoToReserve(resId));
-            CustomersList = new ObservableCollection<CustomerDTO>();
-            MinDate = DateTime.Now;
             SelectedDate = DateTime.Now;
-
-            CustomersList.Add(new CustomerDTO
-            {
-                GuestName = "Test",
-                Arrived = "test",
-                Depart = "test",
-                ReservationId = "1"
-            });
+            CustomersList = new ObservableCollection<CustomerDTO>();
         }
 
         private async Task GoToReserve(string resId)
@@ -106,16 +88,17 @@ namespace ExamEdrian.ViewModel
                 return;
             }
             ShowMainLoader = true;
-            var result = await _searchService.GetCustomers(ParkCode, SelectedDate.ToString("YYYY-MM-DD"));
+            var result = await _searchService.GetCustomers(ParkCode, SelectedDate.ToString("yyyy-MM-dd"));
             ShowMainLoader = false;
 
             if(result != null && result.Any())
             {
-                CustomersList.AddRange(result);
+                CustomersList = new ObservableCollection<CustomerDTO>(result);
             }
             else
             {
                 await Page.DisplayAlert("", Strings.NoResultsFound, Strings.Ok);
+                CustomersList.Clear();
             }
             SearchCommand.CanRun = true;
         }

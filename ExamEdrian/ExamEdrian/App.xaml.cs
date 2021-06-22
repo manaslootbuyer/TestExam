@@ -7,7 +7,7 @@ namespace ExamEdrian
 {
     public partial class App : Application
     {
-        public static string WebUrl = "https://discoverycodetest.azurewebsites.net/";
+        public static string WebUrl = "https://discoverycodetest.azurewebsites.net";
 
         public App()
         {

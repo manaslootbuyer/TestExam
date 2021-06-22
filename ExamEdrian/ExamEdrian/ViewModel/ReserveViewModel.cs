@@ -41,7 +41,7 @@ namespace ExamEdrian.ViewModel
         async Task Save()
         {
             SaveCommand.CanRun = false;
-            if (string.IsNullOrEmpty(Email) && AppHelper.IsValidEmail(Email))
+            if (string.IsNullOrEmpty(Email) || !AppHelper.IsValidEmail(Email))
             {
                 await Page.DisplayAlert("", Strings.EmailErrorMessage, Strings.Ok);
                 SaveCommand.CanRun = true;
@@ -57,6 +57,7 @@ namespace ExamEdrian.ViewModel
 
             if (result)
             {
+                await Page.DisplayAlert("", Strings.SaveSuccessfully, Strings.Ok);
                 await Navigation.PopAsync();
             }
             else

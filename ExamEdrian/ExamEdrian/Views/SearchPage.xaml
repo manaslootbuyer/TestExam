@@ -28,10 +28,7 @@
                         HeightRequest="40"
                         Text="{Binding ParkCode}"
                         TextColor="Black" />
-                    <BoxView
-                        BackgroundColor="Gray"
-                        HeightRequest="1"
-                        HorizontalOptions="FillAndExpand" />
+                   
                 </StackLayout>
 
                 <StackLayout
@@ -45,12 +42,8 @@
 
                      <DatePicker
                         HeightRequest="40"
-                        MinimumDate="{Binding MinDate}"
                         Date="{Binding SelectedDate}" />
-                    <BoxView
-                        BackgroundColor="Gray"
-                        HeightRequest="1.2"
-                        HorizontalOptions="FillAndExpand" />
+                  
                 </StackLayout>
 
                 <Button

@@ -142,5 +142,11 @@ namespace ExamEdrian.Resources {
                 return ResourceManager.GetString("Save", resourceCulture);
             }
         }
+        
+        public static string SaveSuccessfully {
+            get {
+                return ResourceManager.GetString("SaveSuccessfully", resourceCulture);
+            }
+        }
     }
 }
